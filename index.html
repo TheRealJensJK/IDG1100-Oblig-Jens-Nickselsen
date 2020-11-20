@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>IDG1100-Oblig-Jens-Nickesen</title>
+  <meta name="description" content="Obligatory assigment IDG 1100 NTNU">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+	<h1>Oblig IDG1100 Jens Nickelsen</h1>
+	<div>
+	<h3>1. What components are part of the Von Neuman Architecture</h3>
+	<p>he Von Naumann architecture contains the folowing components; a prossessing unit (a logic unit and processor registers), a controll unit (instruction register and program counter), memory, external mass storage, input and uotput machanisms</p>
+		
+	<h3>2. What is user space?</h3>
+	<p>The user space is all the code that runs outside the os's kernel</p>
+		
+	<h3>3. What is the shell? </h3>
+	<p>The shell is a tool for manipilating data and executing applications</p>
+		
+	<h3>4. Where is the shell located?</h3>
+	<p>The shell is located in the user space</p>
+		
+	<h3>5. What is the main task of the shell?</h3>
+	<p>To act as a intermidiary between the user and the os (executing commands as the user imputs them)</p>
+		
+	<h3>6. What is the octal representation of a file that can be read and written only by its owner?</h3>
+	<p>The octal representation of a file that can be read and written only by it's owner is: 0700 </p>
+		
+	<h3>7. In UNIX systems, what is the common name of the special user that can access and modify every file?</h3>
+	<p>The common name for the special user that can access and modify every file in UNIX systems is a superuser</p>
+		
+	<h3>8.Which file permission classes are available in UNIX systems?</h3>
+	<p>The file premission classes are; User, Group and Others</p>
+		
+	<h3>9. As of 2020, which percentage of servers have UNIX-like OS?</h3>
+	<p>The procentage of servers running UNIX systems is about 70%</p>
+		
+	<h3>10. The command ssh will:</h3>
+	<p>The ssh command will: start the ssh client and can establish a secure conection to a ssh server on a remote machine.</p>
+		
+	<h3>11. UNIX Command: access your current working directory</h3>
+	<p>In UNIX to get to your current working directory you can use the command <code>pwd</code></p>
+		
+	<h3>12. UNIX Command: rename files (give an example)</h3>
+	<p>In unix to rename files you can use the command "mv" to rename a file. example <code>mv dummyfile1.txt newdummyfile1.txt</code> renames dummyfile1.txt to newdummyfile1.txt</p>
+		
+	<h3>13. UNIX Command: schedule the execution of programs in the future</h3>
+	<p>To schedule a execution of a program in the future we can use the at command: <code>at 17:00</code> will run at 17:00, or <code>at 17:00 tomorrow</code> wil run at 17:00 tomorrow</p>
+		
+	<h3>14. UNIX Command: Forcefully shutdown the command with process ID 123</h3>
+	<p>To forcefully shutdown a process we can use the kill command, example; <code>kill 123</code></p>
+		
+	<h3>15. UNIX Command: access your root user</h3>
+	<p>In UNIX to access your roo user you use the command <code>sudo</code></p>
+		
+	<h3>16. Crontab scheduled: At minute 30 on Sunday.</h3>
+	<p>To schedule a corntab at minute 30 on sunday you use: <code>30 0 * * 6 "the wanted command"</code></p>
+		
+	<h3>17. Crontab scheduled: At minute 30 on day-of-month 15.</h3>
+	<p>To schedule a corntab at minute 30 on the 15th day of the month you use: <code>30 0 15 * * "the wanted command"</code></p>
+		
+	<h3>18. Crontab scheduled: At 05:30 on every day-of-week from Sunday through Monday in June.</h3>
+	<p>To schedule a corntab at 05:30 on every day of the week from sunday trought monday in june you use: <code>30 5 * 6 * "the wanted command"</code></p>
+		
+	<h3>19. Script: print your name and date</h3>
+	<p>A script that prints the username and the date can be written like:<br>
+	<code>
+	!#/bin/bash<br>
+	now=$(date)<br>
+	echo "$USER" "$now"
+	</code>
+	</p>
+		
+	<h3>20. Script: add two numeric values, print the result</h3>
+	<p>A script that takes two numeric inputs and adds them, then prints the resoult can be written like:<br>
+	<code>
+	!#/bin/bash<br>
+	sum=$(($1 + $2))<br>
+	echo $sum
+	</code>		
+	</p>
+		
+	<h3>21. Script: inputs username, prints “USERNAME stored”</h3>
+	<p>A script to take a string "username" and prints "Username stored" can be writen like:<br>
+	<code>
+	!#/bin/bash<br>
+	read Username<br>
+	echo $Username "stored"	
+	</code>	
+	</p>
+		
+	<h3>22. Script: Store the output of the command “hostname” in a variable. Display “This script is running on _.” where “_” is the output of the “hostname” command</h3>
+	<p>A script to store and print the hostname command can be written like:<br>S
+	<code>
+	#!/bin/bash<br>
+	name=$HOSTNAME<br>
+	echo "This script is running on " $name
+	</code>	
+	</p>
+		
+	<h3>23. Script: Store the output of the working directory (from where the script is run) in a variable then print the variable.</h3>
+	<p>A script to store and print the current working directory can be written like:<br>
+	<code>
+	#!/bin/bash<br>
+	pwd=$(pwd)<br>
+	echo $pwd
+	</code>	
+	</p>
+		
+	<h3>24. Create a step by step tutorial on how to create a cronjob that prints “Task scheduled at” + DATE. Cronjob is scheduled every 30 minutes on today’s date (only today).</h3>
+	<p>To print a message using cronjob every 30 minutes we need to make a new .sh file, to do this we can use the "vi" command to make a file called "script.ssh" We then need to open the file usin "vim script.sh" and can add the folowing code:
+	<code>
+	#!/bin/bash<br>
+	now=$(date)<br>
+	echo "Task is scheduald at " $date<br>
+	</code>	
+	We then save and exit the file. In the terminal we can run the script using cronjob in the folowing manner: "30 * 20 * * script.sh" the script will then run every 30 minutes the rest of the day
+	</p>
+		
+	<h3>25. Create a script that takes an input (letter or number) that will display the answer of a question.
+	The script should when started list a menu for the user with the different questions that can be
+	chosen and which corresponding letter the user will have to give as input to display the answer of
+	the desired question. One of the possible inputs the user should be able to make is "q" for quitting
+	the script. The menu should also have a default case where all the items is displayed again, or no
+	changes is made if the user gives an invalid input. Hint: use a switch case to be able to handle the
+	menu. Each option in the menu should lead to an echo of the answer
+	</h3>
+	<p>To make this game we make a .sh file and add this code:<br>
+	<code>
+		#!/bin/bash<br>
+		q1="What is the capital of Norway?"<br>
+		q2="What is the currency in Germany?"<br>
+		q3="2 + 2 = ?"<br>
+		q4="How many countries are there in the Nordic council?"<br>
+		q5="Where does Santa live?"<br>
+
+		echo "Use the numbers on your keyboard to view the awnser for a question " $q1 $q2 $q3 $q4 $q5 " or press q to quit"<br>
+
+		awake=true<br>
+
+		while $awake; do<br>
+				read input<br>
+
+
+
+		case $input in<br>
+				1)<br>
+						echo "The capital of Norway is Oslo"<br>
+						;;<br>
+
+				2)<br>
+						echo "The currency in Germany is the Euro"<br>
+						;;<br>
+
+				3)<br>
+						echo "2 + 2 = 4"
+						;;<br>
+
+				4)<br>
+						echo "The Nordic council consists of 5 countries"<br>
+						;;<br>
+
+				5)<br>
+						echo "Santa lives on the north pole"<br>
+						;;<br>
+
+				q)<br>
+						awake=false
+						;;<br>
+
+				*)<br>
+						echo "please enter a valid input"<br>
+						;;<br>
+				esac<br>
+		done<br>
+	</code>	
+	</p>
+	
+	
+	</div>
+</body>
+	
+</html>

@@ -1,0 +1,112 @@
+6. The octal representation of a file that can be read and written only by it's owner is: 0700 
+
+7. The common name for the special user that can access and modify every file in UNIX systems is a superuser
+
+8. The file premission classes are; User, Group and Others
+
+9. The procentage of servers running UNIX systems is about 70%
+
+10. The ssh command will: start the ssh client and can establish a secure conection to a ssh server on a remote machine.
+
+11. In UNIX to get to your current working directory you can use the command "pwd"
+
+12. In unix to rename files you can use the command "mv" to rename a file. example "mv dummyfile1.txt newdummyfile1.txt" renames dummyfile1.txt to newdummyfile1.txt
+
+13. To schedule a execution of a program in the future we can use the at command: "at 17:00" will run at 17:00, or "at 17:00 tomorrow" wil run at 17:00 tomorrow
+
+14. To forcefully shutdown a process we can use the kill command, example; kill 123
+
+15. In UNIX to access your roo user you use the command "sudo"
+
+16. To schedule a corntab at minute 30 on sunday you use: 30 0 * * 6 <the wanted command>
+
+17. To schedule a corntab at minute 30 on the 15th day of the month you use: 30 0 15 * * <the wanted command>
+
+18. To schedule a corntab at 05:30 on every day of the week from sunday trought monday in june you use: 30 5 * 6 * <the wanted command>
+
+19. A script that prints the username and the date can be written like:
+
+!#/bin/bash
+now=$(date)
+echo "$USER" "$now"
+
+20. A script that takes two numeric inputs and adds them, then prints the resoult can be written like:
+
+!#/bin/bash
+sum=$(($1 + $2))
+echo $sum
+
+21. A script to take a string "username" and prints "Username stored" can be writen like:
+
+!#/bin/bash
+read Username
+echo $Username "stored"
+
+22. a script to store and print the hostname command can be written like:
+
+#!/bin/bash
+name=$HOSTNAME
+echo "This script is running on " $name
+
+23. a script to store and print the current working directory can be written like:
+
+#!/bin/bash
+pwd=$(pwd)
+echo $pwd
+
+24. To print a message using cronjob every 30 minutes we need to make a new .sh file, to do this we can use the "vi" command to make a file called "script.ssh"
+	We then need to open the file usin "vim script.sh" and can add the folowing code:
+#!/bin/bash
+now=$(date)
+echo "Task is scheduald at " $date
+	
+	We then save and exit the file. In the terminal we can run the script using cronjob in the folowing manner: "30 * 20 * * script.sh" the script will then run every 30 minutes the rest of the day
+
+
+25. To make this game we make a .sh file and add this code:
+#!/bin/bash
+q1="What is the capital of Norway?"
+q2="What is the currency in Germany?"
+q3="2 + 2 = ?"
+q4="How many countries are there in the Nordic council?"
+q5="Where does Santa live?"
+
+echo "Use the numbers on your keyboard to view the awnser for a question " $q1 $q2 $q3 $q4 $q5 " or press q to quit"
+
+awake=true
+
+while $awake; do
+        read input
+
+
+
+case $input in
+        1)
+                echo "The capital of Norway is Oslo"
+                ;;
+
+        2)
+                echo "The currency in Germany is the Euro"
+                ;;
+
+        3)
+                echo "2 + 2 = 4"
+                ;;
+
+        4)
+                echo "The Nordic council consists of 5 countries"
+                ;;
+
+        5)
+                echo "Santa lives on the north pole"
+                ;;
+
+        q)
+                awake=false
+                ;;
+
+        *)
+                echo "please enter a valid input"
+                ;;
+        esac
+done

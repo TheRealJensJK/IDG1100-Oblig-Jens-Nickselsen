@@ -1,0 +1,9 @@
+1. The Von Naumann architecture contains the folowing components; a prossessing unit (a logic unit and processor registers), a controll unit (instruction register and program counter), memory, external mass storage, input and uotput machanisms
+
+2. The user space is all the code that runs outside the os's kernel
+
+3. The shell is a tool for manipilating data and executing applications
+
+4. The shell is located in the user space
+
+5. To act as a intermidiary between the user and the os
